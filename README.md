@@ -1,6 +1,6 @@
 # golang_reverse_integer
 
-Given a signed 32-bit integer `x`, return `x` *with its digits reversed*. If reversing `x` causes the value to go outside the signed 32-bit integer range `[-$2^{31}$, $2^{31} - 1$]`, then return `0`.
+Given a signed 32-bit integer `x`, return `x` *with its digits reversed*. If reversing `x` causes the value to go outside the signed 32-bit integer range [-$2^{31}$, $2^{31} - 1$], then return `0`.
 
 **Assume the environment does not allow you to store 64-bit integers (signed or unsigned).**
 
@@ -32,7 +32,7 @@ Output: 21
 
 **Constraints:**
 
-- $`-2^{31} <= x <= 2^{31} - 1`$
+- $-2^{31} <= x <= 2^{31} - 1$
 
 ## 解析
 
@@ -44,7 +44,7 @@ Output: 21
 
 代表第一個位數是是 sign bit 用來表示症負號
 
-代表最小數值是 -$2^{31}$ = 0b1000,0000,0000,0000,0000,0000,0000,0000
+代表最小數值是 - $2^{31}$ = 0b1000,0000,0000,0000,0000,0000,0000,0000
 
 代表最大數值是 $2^{31}-1$=0b0111,1111,1111,1111,1111,1111,1111,1111
 
@@ -64,7 +64,7 @@ Output: 21
 
 當 res  = ( $2^{31}-1$)/10  , 則 digit 必須要 ≤ 7 = 0b0111 才能放入 32-bit 的有號整數
 
-當 res < 0, 檢查 -$2^{31}$ 的前一個 digit最小數值 =( $-2^{31}$)/10   
+當 res < 0, 檢查 - $2^{31}$ 的前一個 digit最小數值 =( $-2^{31}$)/10   
 
 當 res = ( $-2^{31}$)/10 , 則 digit 必須 ≥ -8 = 0b1000 才能放入32-bit 的有號整數
 
